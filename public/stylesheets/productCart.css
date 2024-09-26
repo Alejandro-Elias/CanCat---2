@@ -1,0 +1,588 @@
+/* body.cart {
+    width: 100%;
+} */
+
+.similares {
+    padding-top: 15px;
+}
+.similares-swiper{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide-cart{
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide-cart img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.cart-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+}
+
+.cart-main-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Productos-en-el-carrito {
+    display: contents;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--ColorGris);
+    row-gap: 10px;
+    padding-bottom: 10px;
+
+}
+
+.Productos-en-el-carrito__seguir-comprando {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin: 8px 8px 0 8px;
+}
+
+.Productos-en-el-carrito__seguir-comprando a {
+    text-decoration: none;
+    color: black;
+    transition: all 500ms;
+}
+
+.Productos-en-el-carrito__seguir-comprando a:hover {
+    font-size: 18px;
+}
+
+.producto__agregado {
+    width: 95%;
+    display: flex;
+    border-radius: 6px;
+    background-color: #fff;
+    justify-content: space-around;
+    box-shadow: 0px 0px 5px rgb(100, 100, 100);
+    height: 80px;
+    gap: 5px;
+    padding: 3px 2px;
+    margin-bottom: 10px;
+    margin-left: 2%;
+}
+
+.producto__agregado_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    
+}
+
+
+.Productos-en-el-carrito__div__titulo__descripcion__precio {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.Productos-en-el-carrito__div__titulo {
+    font-size: 14px;
+}
+
+.Productos-en-el-carrito__div__descripcion {
+    font-size: 12px;
+    width: 200px;
+    display: none;
+}
+
+.Productos-en-el-carrito__div__precio {
+    background-color: var(--ColorAzul);
+    color: var(--ColorAmarillo);
+    border-radius: 5px;
+    font-size: 16px;
+    width: 88px;
+    text-align: center;
+}
+
+.Productos-en-el-carrito__div__contador__eliminar {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.Productos-en-el-carrito__div__contador__eliminar img {
+    max-width: 55px;
+}
+
+.Productos-en-el-carrito__div__contador__eliminar i {
+    font-size: 1.2rem;
+    justify-content: center;
+}
+
+/* ----------------Formas de pago--------------------------------------------- */
+/* ----------------Formas de pago--------------------------------------------- */
+
+.formas-de-pago {
+    width: 100%;
+    background-color: var(--ColorAzul);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;
+    padding-bottom: 10px;
+
+    margin-bottom: 30px;
+
+}
+
+.formas-de-pago h4 {
+    width: 320px;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.tipo__de__tarjeta {
+    display: flex;
+    justify-content: space-between;
+    /* padding-right: 10px; */
+    row-gap: 2px;
+
+}
+
+.tipo__de__tarjeta--empresa {
+    width: 25%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+/*----------------------------------------  */
+
+
+.datos__de__tarjeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding-top: 30px;
+    max-width: 450px;
+
+}
+
+.datos__de__tarjeta--nombre--numero {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.datos__de__tarjeta--nombre--numero input {
+    width: 90%;
+
+    display: block;
+    text-align: center;
+    height: 50px;
+    background-color: var(--ColorAzul);
+    border: #fff solid 2px;
+    color: #fff;
+}
+
+
+
+/* ------------------------------------------------------------------------ */
+
+
+
+
+.datos__de__tarjeta-fecha-cvv {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: space-around;
+
+
+
+}
+
+.datos__de__tarjeta-fecha-cvv input {
+    width: 48%;
+    text-align: center;
+    height: 50px;
+    background-color: var(--ColorAzul);
+    border: #fff solid 2px;
+    color: #fff;
+
+}
+
+.datos__de__tarjeta-fecha {
+    margin-right: 5px;
+}
+
+.datos__de__tarjeta-cvv {
+    margin-left: 5px;
+}
+
+/* ---------------------------------------------------- */
+
+
+
+.subtotal {
+    width: 90%;
+    display: flex;
+    max-width: 400px;
+    justify-content: space-between;
+    padding: 12px 0px;
+}
+
+.subtotal__izquierda {
+    width: 50%;
+    text-align: start;
+}
+
+.subtotal__derecha {
+    width: 50%;
+    text-align: end;
+}
+
+
+/* ----------------------------------- */
+
+.cod__de__descuento {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+}
+
+.cod__de__descuento input {
+    width: 40%;
+    text-align: end;
+    background-color: var(--ColorAzul);
+    border: #fff solid 1px;
+    color: #fff;
+}
+
+.cod__de__descuento label {
+    width: 60%;
+    text-align: start;
+}
+
+
+/* ----------------------------------------- */
+
+
+.formas__de__pago__envio {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    max-width: 400px;
+}
+
+.formas__de__pago__envio__izquierza {
+    width: 50%;
+    text-align: end;
+}
+
+.formas__de__pago__envio__derecha {
+    width: 50%;
+    text-align: start;
+}
+
+
+
+/* -------------------------------------------- */
+
+
+.formas__de__pago__total--pagar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    max-width: 400px;
+}
+
+.formas__de__pago__total {
+    text-align: start;
+    margin: 10px 0;
+}
+
+.formas__de__pago__pagar {
+    padding: 30px;
+    width: 170px;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: white;
+    color: var(--ColorAzul);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+/* ----------------------------------------------------------------------- */
+/* -----------------productos similares----------------------------------- */
+
+
+
+
+.productos-similares {
+
+    background-color: var(--ColorGris);
+    padding: 50px !important;
+}
+
+.swiper_titulo h3 {
+    text-align: center;
+    margin: 15px;
+}
+
+/* -------------------------------------------- */
+.productos {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 5px;
+    box-shadow: 0px 0px 5px rgb(100, 100, 100);
+    gap: 13px;
+}
+
+.productos img {
+    max-width: 50%;
+    height: 130px;
+    padding: 5px;
+    padding-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* -------------------------------------------- */
+
+
+.productos__marca__descripcion__precio__carrito {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    width: 50%;
+    margin-right: 5px;
+}
+
+.productos__marca__descripcion {
+    width: 100%;
+    flex-direction: column;
+    height: 50px;
+
+}
+
+.productos__marca__descripcion h6 {
+    text-align: center;
+    font-size: 14px;
+}
+
+.productos__marca__descripcion p {
+    text-align: center;
+    font-size: 12px;
+   
+}
+
+/* ------------------------------------------------ */
+
+.productos__precio__carrito {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    background-color: var(--ColorAzul);
+
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+
+.productos__precio__carrito h5 {
+    height: 45%;
+    font-size: 16px;
+    color: var(--ColorAmarillo);
+    padding-top: 8px;
+}
+
+.productos__precio__carrito i {
+    height: 50%;
+    font-size: 1rem;
+    color: #fff;
+    padding-top: 6px;
+}
+
+/*============================================================= */
+/* tablet 480px */
+/*============================================================= */
+
+@media (min-width:480px) {
+
+    .formas-de-pago {
+        width: 100%;
+        padding: 0%10%;
+    }
+    .similares {
+        padding-top: 20px;
+    }
+
+    /*   .productos-similares {
+        display: flex;
+    } */
+    
+}
+
+@media (min-width:520px) {
+
+
+    .formas-de-pago {
+        padding: 0% 15%;
+    }
+    .similares {
+        padding-top: 25px;
+    }
+    .Productos-en-el-carrito__div__descripcion{
+        display: flex;
+    }
+}
+.Productos-en-el-carrito__div__descripcion{
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+@media (min-width:720px) {
+    .prod-similares-que-no-s-mostraran {
+        display: none;
+    }
+    .Productos-en-el-carrito__div__descripcion{
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis;
+    }
+  
+}
+
+/*============================================================= */
+/*  desktop 1024px */
+/*============================================================= */
+
+@media (min-width:1020px) {
+    .cart-main {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        background-color: var(--ColorGris);
+    }
+
+    .cart-main-box {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        align-items: center;
+    }
+
+    .Productos-en-el-carrito {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    .producto__agregado {
+        width: 100%;
+        height: 60px;
+        margin: 0px 5px 10px;
+        align-items: center;
+
+    }
+    .producto__agregado_img{
+        max-width: 50px;
+    }
+
+    .Productos-en-el-carrito__div__titulo__descripcion__precio {
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .Productos-en-el-carrito__seguir-comprando{
+        height: 0px;
+    }
+    .Productos-en-el-carrito__div__descripcion{
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis;
+    }
+
+    .Productos-en-el-carrito__div__contador__eliminar {
+        width: 25%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+
+
+    .formas-de-pago {
+        padding: 0%;
+        height: 572px;
+        width: 30%;
+        margin-top: 3.5%;
+    }
+
+
+    .productos-similares {
+        height: 250px;
+        padding: 30px 0px;
+    }
+
+    .productos-similares h3 {
+        margin-top: 0%;
+        margin-bottom: 10px;
+    }
+
+
+
+    .prod-similares-que-no-s-mostraran {
+        display: none;
+    }
+    .similares {
+        background-color: var(--ColorGris);
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    .productos__marca__descripcion p{
+        margin: 5px 0px;
+    }
+}  

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head',{ title : "Dashboard" }) %>
+  <%- include('./partials/scritps') %>
+    <link rel="icon" type="image/x-icon" href="/images/favicon-dashboard.png">
+    <title>Cancat - Dashboard</title>
+
+    <body class="dashboard-body">
+      <div class="dashboard-header">
+        <%- include('./partials/header-dashboard') %>
+      </div>
+
+      <div class="dashboard-nav">
+        <%- include('./partials/nav-dashboard') %>
+      </div>
+
+
+
+      <main class="container mt-3">
+        <section class="row d-flex justify-content-end gap-1 pt-4">
+
+          <div class="col-10 d-flex flex-row justify-content-between">
+
+            <div class="col-3 d-flex flex-column justify-content-between">
+              <div class=" mb-3">
+                <div style="border-radius: 30px; background-color: #139EA7 !important;" class="card shadow">
+                  <div class="p-3 d-flex flex-column justify-content-between">
+                    <h5 style="color: white; text-align: center;">
+                      Total del Productos
+                    </h5>
+                    <h2 style="color: white; text-align: center; margin-top: 5px;">
+                      20
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <div style="border-radius: 30px; background-color: #0E7278 !important;" class="card shadow">
+                  <div class="p-3 d-flex flex-column justify-content-between">
+                    <h5 style="color: white; text-align: center;">
+                      Total del Usuarios
+                    </h5>
+                    <h2 style="color: white; text-align: center; margin-top: 5px;">
+                      12
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-3 d-flex flex-column justify-content-between">
+              <div class=" mb-3">
+                <div style="border-radius: 30px; background-color: #0E7278 !important;" class="card shadow">
+                  <div class="p-3 d-flex flex-column justify-content-between">
+                    <h5 style="color: white; text-align: center;">
+                      Ultimo Producto
+                    </h5>
+                    <a style="text-decoration: none;"  href="">
+                      <h5 style="color: white; text-align: center; margin-top: 5px;">
+                        Comida para perro CanCat
+                      </h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <div style="border-radius: 30px; background-color: #139EA7 !important;" class="card shadow">
+                  <div class="p-3 d-flex flex-column justify-content-between">
+                    <h5 style="color: white; text-align: center;">
+                      Categorias
+                    </h5>
+                    <h2 style="color: white; text-align: center; margin-top: 5px;">
+                      6
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-5 mb-3">
+              <div style="border-radius: 30px; background-color: #0E7278 !important;" class="card shadow">
+                <div class="p-3">
+
+                  <div class="d-flex justify-content-around my-3">
+                    <div style="border-radius: 15px; background-color: #139EA7; color: white;"
+                      class="card d-flex justify-content-between col-5 p-3 text-center">
+                      Perros
+                    </div>
+                    <div style="border-radius: 15px; background-color: #139EA7; color: white;"
+                      class="card d-flex justify-content-between col-5 p-3 text-center">
+                      Gatos
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-around my-3">
+                    <div style="border-radius: 15px; background-color: #139EA7; color: white;"
+                      class="card d-flex justify-content-between col-5 p-3 text-center">
+                      Peces
+                    </div>
+                    <div style="border-radius: 15px; background-color: #139EA7; color: white;" : 15px;"
+                      class="card d-flex justify-content-between col-5 p-3 text-center">
+                      Roedores
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-around my-3">
+                    <div style="border-radius: 15px; background-color: #139EA7; color: white;"
+                      class="card d-flex justify-content-between col-5 p-3 text-center">
+                      Aves
+                    </div>
+                    <div style="border-radius: 15px; background-color: #139EA7; color: white;"
+                      class="card d-flex justify-content-between col-5 p-3 text-center">
+                      Otros
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-12 col-md-10 pt-4">
+            <div class="card shadow rounded">
+              <div style="background-color: #0E7278;" class="card-header d-flex justify-content-between">
+                <h5 style="color: white;" class="card-title">Productos</h5>
+                <a style="color: white;" class="btn btn-outline-light" href="/productos/agregar-articulos">Nuevo
+                  Producto</a>
+              </div>
+              <div class="p-3 pb-0 table-responsive">
+
+                <% if (productos.length) { %>
+                  <table class="table-striped table-bordered p-2">
+                    <thead class="table-info dashboard-thead">
+                      <tr>
+                        <th class="p-2" scope="col">ID</th>
+                        <th class="p-2" scope="col">Nombre</th>
+                        <th class="p-2" scope="col">Descripción</th>
+                        <th class="p-2" scope="col">Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% productos.forEach(({id, name, description, Image_products, price})=> { %>
+                        <tr>
+                          <th class="p-2" scope="row">
+                            <%= id %>
+                          </th>
+                          <td class="p-2">
+                            <%= name %>
+                          </td>
+                          <td class="p-2">
+                            <%= description %>
+                          </td>
+                          <td>
+                            <div class="d-flex gap-2 p-2">
+                              <a class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal<%= id %>">
+                                <i class="fa-solid fa-eye"></i></a>
+
+                              <a class="btn btn-sm btn-outline-warning" href="/productos/editar-articulo/<%= id %>"><i
+                                  class="fa-solid fa-pencil"></i></a>
+
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#modalDelete<%= id %>"
+                                class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+
+                              <%- include('./partials/modal-product-dashboard',{ id, name, description,Image_products,
+                                price }) %>
+
+                                <%- include('./partials/modal-delete-product', { id, name }) %>
+
+                            </div>
+                          </td>
+
+                        </tr>
+
+                        <% }) %>
+
+                          <% } else { %>
+                            <div class="col-12">
+                              <h5 class="products-title" style="color: tomato;">No hay productos que coincidan con esa
+                                búsqueda</h5>
+                            </div>
+                            <% } %>
+
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </body>
+
+</html>

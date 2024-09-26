@@ -1,0 +1,34 @@
+<header style="padding: 0;">
+    <nav style="background-color: #183561 !important; height: 60px; box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.75);" class="navbar navbar-expand-lg bg-body-tertiary">
+        <div style="background-color: #183561;" class="container-fluid">
+            <a style="color: white; font-size: 30px; margin-left: 10px;" class="navbar-brand" href="/">CanCat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a style="color: white; font-size: 20px" class="nav-link active" aria-current="page"
+                            href="/admin/dashboard">Home</a>
+                    <li class="nav-item d-flex align-self-center">
+                        <a style="color: white;" class="nav-link" href="/productos/agregar-articulos">Nuevo Producto</a>
+                    </li>
+                    <li class="nav-item nav-item d-flex align-self-center">
+                        <a style="color: white;" class="nav-link" href="/usuarios/dashboardUsuarios">Usuarios</a>
+                    </li>
+                </ul>
+                <form action="/admin/search" method="GET" class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" name="keywords" placeholder="Search"
+                        aria-label="Search">
+                    <button style="color: white; border: 1px solid #0B5F64; box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.75);
+                    -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.4);
+                    -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.4); margin-left: 5px;" class="btn "
+                        type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>

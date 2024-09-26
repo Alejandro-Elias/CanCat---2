@@ -1,0 +1,85 @@
+[
+   {
+      "id": "1",
+      "name": "Nicolas Oflaerti",
+      "email": "Nikoofla@gmail.com",
+      "password": "$2a$10$LzPg1KcQij6sCgw2vMVe9u9fTWpmywRsTn/64MY6G6wIG8kKYTXyS",
+      "role": "admin",
+      "mascota": "lola",
+      "especie": "gato",
+      "image": "1705843356056producto.png"
+   },
+   {
+      "id": "2",
+      "name": "Nicolas Oflaerti",
+      "email": "Nikooa@gmail.com",
+      "password": "$2a$10$JS6YroVGqtjZC9h1PibQTOO9hFDp2TPPAy66xARL4xz7OnpfpTS3i",
+      "password2": "11111111",
+      "role": "user",
+      "mascota": "",
+      "especie": "",
+      "image": "defaultUser.jpeg"
+   },
+   {
+      "id": "3",
+      "name": "mariana mariana",
+      "email": "mari@example.com",
+      "password": "$2a$10$M9WZLofONSlcisNyWOKWvOR/bLJaTILQsigIMlFEp8xPe2p9sDn36",
+      "password2": "user123456",
+      "role": "admin",
+      "mascota": "Negra",
+      "especie": "perro",
+      "image": "1705673684287producto.jpg"
+   },
+   {
+      "id": "4",
+      "name": "Alejandro Elias",
+      "email": "alejandroelias25@gmail.com",
+      "password": "$2a$10$zn1JfBaxmo.Cp5VmPkJF8OZVB3aBDqPHixTRyA.fb1aFW5VMr22.a",
+      "password2": "12345678",
+      "role": "admin",
+      "mascota": "boby",
+      "especie": "gato",
+      "image": "1706552663753producto.jpg"
+   },
+   {
+      "id": "5",
+      "name": "Mariano Elias",
+      "email": "mariano@gmail.com",
+      "password": "$2a$10$dw.ahQjfT05SvYXRlTh7WOk/kf1DS0K.Kxx3J345C51TadrU9joJ6",
+      "role": "admin",
+      "mascota": "pepo",
+      "especie": "loro",
+      "image": "1706398701140producto.png"
+   },
+   {
+      "id": "6",
+      "name": "Cosme Fulanito",
+      "email": "CosmeFulanito@gmail.com",
+      "password": "$2a$10$DEUaBOlTUQYizl8zQJMgJeQHHrcMHbDA5gLTJ/7BO80IqdINOj01i",
+      "role": "user",
+      "mascota": "Enviado de Santa",
+      "especie": "perro",
+      "image": "1706482665639producto.png"
+   },
+   {
+      "id": "7",
+      "name": "Digital House",
+      "email": "admin@gmail.com",
+      "password": "$2a$10$rABJIBvXpHZa0aj5EYOi6Ob/HqAjI0q7VsFpLgzUHsKYYKn/bWVfO",
+      "role": "admin",
+      "mascota": "Catch",
+      "especie": "gato",
+      "image": "1708217378172producto.png"
+   },
+   {
+      "id": "8",
+      "name": "Digital House",
+      "email": "user@gmail.com",
+      "password": "$2a$10$GzMDc7PKY58C/4C7IhNl4.wEWXF6FSoBuHGm4fz4tSdmHhLjWEmTW",
+      "role": "user",
+      "mascota": "Catch",
+      "especie": "gato",
+      "image": "1708217705535producto.png"
+   }
+]

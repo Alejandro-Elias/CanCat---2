@@ -1,0 +1,5 @@
+COMENZAR A HACER: debemos comenzar a ser más empaticos con el otro, salir de nuestro lugar y ponernos más en el suyo, entender que el otro tiene sus tiempos y problemas tambien, pensar antes de hablar.
+HACER MÁS: Pensar un poco mejor como decir las cosas, comunicarse mejor, opinar más, decir en el momento cuando molestan las cosas, tener los proyectos a tiempo para que no surjan los problemas a ultimo momento.
+CONTINUAR HACIENDO: seguir comunicando cuando surja algún problema por el cual x no pueda seguir con su parte, continuar siendo un grupo.
+HACER MENOS: tratar de no llegar tan jugados con los tiempos.
+DEJAR DE HACER: dejar de buscar culpables cuando falla algo, dejar de tocar el codigo ajeno sin su permiso, dejar de faltarnos como compañeros, faltas de respeto, dejar de levantar la voz cuando algo nos moleste, dejar de intentar ser uno solo en vez de un equipo, dejar de intentar que el otro sea lo que no es, dejar de presionar, dejar de callarnos por miedo a ofender al otro ante una critica constructiva, dejar de ofendernos ante una critica constructiva, dejar las criticas destructivas.

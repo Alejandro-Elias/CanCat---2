@@ -1,0 +1,16 @@
+<div class="modal fade" id="modalDelete<%= id %>" tabindex="-1" aria-labelledby="modalDelete" aria-hidden="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <div class="modal-body position-relative border border-primary rounded">
+          <img class="w-100 p-0" src="/images/imagen-delete-producto.png" alt="">
+          <h5 class="position-absolute top-50 texto-delete">Deseas eliminar el producto: <%= name %>?</h5>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+          <form action="/productos/eliminar/<%= id %>?_method=DELETE" method="POST">
+          <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>

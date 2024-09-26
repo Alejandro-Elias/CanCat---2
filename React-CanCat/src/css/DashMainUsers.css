@@ -1,0 +1,118 @@
+.main_users{
+ 
+    width: 100%;
+    height: auto;
+    margin: 2%;
+    margin-top: 10px;
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+.main-user_information{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+ 
+}
+
+.main-user_ultimo-creado{
+    padding-top: 10px;
+    width: 30%;
+    background-color: #0E7278;
+    height: 100%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 0 #000;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: center;
+    color: #212529;
+    
+}
+
+
+.main-user_total{
+    width: 30%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 0 #000;
+    background-color: #0E7278;
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.main-user_total h1{
+    font-size: xx-large;
+}
+
+.main-user_total h2{
+    width: 60%;
+    align-items: center;
+    background-color: rgb(86, 144, 133);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    color: #ffff;
+    text-shadow: 1px 1px 0 #000;
+    
+}
+.main-user_admin{
+    width: 30%;
+    background-color: #0E7278;
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 0 #000;
+}
+.main-user_admin h1{
+    font-size: xx-large;
+}
+.main-user_admin h2{
+    width: 60%;
+    align-items: center;
+   background-color: rgb(86, 144, 133);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    color: #ffff;
+    text-shadow: #0000;
+}
+.main-users_dasboard{
+     width: 100%;
+    
+}
+.main-users_dasboard_header{
+    border-radius: 5px 5px 0 0;
+    width: 96%;
+   margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #ffff;
+    background-color: rgb(54, 73, 73);
+    align-items: center;
+    }
+
+    .main-users_dasboard_header h3{
+        width: 40%;
+        text-align: start;
+        margin-left: 20px;
+        
+    }
+   
+
+
+.user_table{    
+    width: 96%;
+   
+    
+}

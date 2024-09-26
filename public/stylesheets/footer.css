@@ -1,0 +1,307 @@
+.footer {
+    background-color: var(--ColorAzul); 
+    background-image: url("/images/background-footer.png");   
+    color: white;
+}
+
+.footer--content--logo {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer--content--logo img {
+    width: 50%;    
+}
+
+
+.footer--content--registrate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 0px 20px 20px;    
+    box-shadow: 0px 2px 2px 0px #272727;
+}
+
+.footer--content--registrate--texto p{
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.footer--content--nosotros {
+    display: none;
+}
+
+.footer--content--registrate--input--texto {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 5px;
+    border: 2px solid var(--ColorCeleste);
+    margin-right: 30px;
+}
+
+.footer--content--registrate--input--submit {
+    width: 110px;
+    height: 30px;
+    color: var(--ColorAzul);
+    border: none;
+}
+
+.footer--nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer--nav--a {    
+    box-shadow: 0px 2px 2px 2px #272727;
+}
+
+
+.footer--nav a {
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+.footer--content--ul {
+    display: none;
+}
+
+.footer--seguinos, .footer--medios-de-pago {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+    font-size: 24px;
+    gap: 10px;
+}
+
+.footer--iconos--redes, .footer--iconos--pagos {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    gap: 25px;
+}
+
+.footer--iconos--redes a { 
+    text-decoration: none;
+    color: white;
+}
+
+.footer--iconos--pagos img {
+    height: 50px;
+}
+
+.footer--copy {
+    font-size: 10px;
+    text-align: center;
+    padding: 30px 0 10px;
+}
+
+.footer-desplegable {
+    display: none;
+    padding: 15px;
+    text-align: center;
+    height: auto;
+    box-shadow: 0px 2px 2px 2px #272727;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.desplegable--a {
+    display: flex;
+    justify-content: center;
+    margin: -20px 0;
+}
+/* Tablet */
+
+@media (min-width: 480px) {
+    .footer--content--logo-y-texto {
+        display: flex;
+        align-items: center;
+    }
+
+    .footer--content--logo {
+        padding: 0;
+        margin: 40px 0 40px 40px;
+        display: block;
+        width: 50%;
+    }
+
+    .footer--content--logo img {
+        width: 70%;
+    }
+
+
+    .footer--content--nosotros {
+        display: flex;
+        flex-wrap: wrap;
+        width: 35%;
+        font-size: 18px;
+    }
+
+    .footer--content--registrate {
+        flex-direction: row;
+        padding: 0 20px 20px 40px;
+        align-items: flex-start;     
+        box-shadow: none;
+    }
+
+    .footer--content--registrate--texto p {
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        text-align: left;
+        width: 90%;
+    }
+
+    .footer--content--form {
+        width: 70%;
+    }
+
+    .footer--content--input {
+        margin-left: 20px;
+        width: 100%;
+    }
+
+    .footer--content--registrate--input--texto {
+        width: 240px;
+        height: 55px;
+        padding: 15px;
+    }
+
+    .footer--content--registrate--input--submit {
+        width: 130px;
+        height: 55px;
+    }
+
+    .footer--nav {
+        display: none;
+    }
+
+    .footer--content--ul {
+        display: block;
+        padding: 80px 20px 0 20px;
+        font-size: 22px;
+        margin-left: 20px;
+    }
+
+    .footer--content--ul p {
+        margin-bottom: 20px;
+    }
+
+    .footer--content--ul li {
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .footer--content--ul a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .footer--servicios {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        padding-left: 40px;
+    }
+
+    .footer--content--ul-servicios {
+        padding: 25px 80px 0px 20px;
+    }
+
+    .footer--redes-y-medios {
+        width: 35%;
+    }
+    
+    .footer--copy {
+        font-size: 15px;
+        padding-bottom: 20px;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+
+    .footer--content--logo img {
+        width: 40%;
+    }     
+
+    .footer--content--registrate--texto {
+        width: 70%;
+        text-align: center;
+        margin-left: -150px;
+    }
+
+    .footer--content--registrate--texto p {
+        align-self: center;
+        width: 100%;
+        font-size: 26px;        
+    }
+
+
+    .footer--content--nosotros {
+        width: 25%;
+    }
+
+    .footer--content--logo-y-texto {
+        align-items: flex-start;
+        padding-top: 30px;
+    }
+    .footer--content--input {
+        margin-top: -100px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer--content--registrate--input--texto {
+        width: 630px;
+        height: 60px;
+        border-radius: 30px;
+    }
+
+    .footer--content--registrate--input--texto:hover {
+        width: 650px;
+        transition: 300ms;
+    }
+
+    .footer--content--registrate--input--submit {
+        width: 220px;
+        height: 60px;
+    }
+
+    .footer--content--registrate--input--submit:hover {
+        background-color: var(--ColorCeleste);
+        transition: 500ms;
+    }
+
+    .footer--content--ul {
+        width: 32%;
+    }
+
+    .opcion {
+        position: relative;
+    }
+
+    .footer--servicios {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        width: 70%;
+        flex-direction: row;
+    }
+
+    .footer--content--ul-servicios {
+        padding-right: 0;
+    }
+}

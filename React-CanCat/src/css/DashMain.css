@@ -1,0 +1,20 @@
+.Dash-main_sections{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+
+.Dash-main_section_products{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+
+}
+.Dash-main_section_users{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}

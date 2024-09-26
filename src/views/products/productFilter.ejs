@@ -1,0 +1,36 @@
+<%- include('../partials/head',{ title : "Perros" }) %>
+
+  <body class="index__body">
+
+    <%- include('../partials/header', {...usuario}) %>
+      <link rel="icon" type="image/x-icon" href="/images/favicon-perro.png" />
+      <title>CanCat - productos</title>
+
+
+      <main class="index__body__main">
+
+
+        <section class="index__body__main__section">
+          <h2 class="index__body__main__section--titulo">
+            <% if (productos && productos.length > 0) { %>
+              <%= 
+              productos[0].product_species.name === "otro" ? "Ofertas" : productos[0].product_species.name ==="perro" ? "Perros" : productos[0].product_species.name ==="gato" ? "Gatos" : 
+              productos[0].product_species.name ==="ave" ? "Aves" : 
+              productos[0].product_species.name ==="pez" ? "Peces" : 
+              productos[0].product_species.name %>
+            <% } else { %>
+          <%= 'no me gusta nada aca '%>
+            
+           
+          <% } %></h2>
+
+          <% productos.forEach(product => { %>
+          <%- include('../partials/productCard.ejs',{ product }) %>
+          <% }) %>
+
+
+                  <%- include('../partials/footer') %>
+
+  </body>
+
+  </html>

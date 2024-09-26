@@ -1,0 +1,21 @@
+
+
+.table_users_header{
+    background-color: darkslategray !important; 
+    
+}
+.table_users_header_name{
+    width:50% ;    
+     color:rgb(6, 30, 12) !important;
+    background-color: rgb(86, 144, 133) !important;
+}
+.table_users_header_mail{
+    width:100% ;
+     color:rgb(6, 30, 12) !important;
+    background-color: rgb(86, 144, 133) !important;
+}
+.table_users_header_rol{
+    width:100% ;
+     color:rgb(6, 30, 12) !important;
+    background-color: rgb(86, 144, 133) !important;
+}

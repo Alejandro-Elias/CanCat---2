@@ -1,0 +1,20 @@
+<a href="/productos/detalle/<%= product.id %>" class="productCard-ancla">
+  <div class="index__body__main__section--producto">
+    <div class="index__body__main__section--producto--columna1">
+      <img src="/images/<%= product.Image_products && product.Image_products[0] && product.Image_products[0].file ? product.Image_products[0].file : "new-product.default.png" %>" alt="imagen del producto">
+    </div>
+
+    <div class="index__body__main__section--producto--columna2">
+      <h3 class="index__body__main__section--producto--titulo"><%= product.name %></h3>
+      <!-- <p class="index__body__main__section--producto--descripcion"><%= product.description %></p> -->
+    </div>
+</a>
+
+    <div class="index__body__main__section--producto--columna3">
+      <p class="index__body__main__section--producto--precio"> $ <%= Intl.NumberFormat('de-DE').format(product.price)%> </p>
+      <a href="#" id="addAlert" class="index__body__main__section--producto--agregar" onclick="addToCart('<%=product.id%>', '<%=product.name%>','<%=product.description%>', '<%=product.price%>', '<%=product.Image_products[0].file%>')">
+        <p>Agregar al Carrito</p>
+        <i class="fa-solid fa-cart-plus"></i>
+      </a>
+    </div>
+  </div>

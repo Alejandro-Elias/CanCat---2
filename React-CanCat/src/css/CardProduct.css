@@ -1,0 +1,41 @@
+.CardProduct{
+    width: 90%;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #ffff;
+    border-radius: 5px;
+    gap: 20px;
+    background-color: rgb(86, 144, 133);
+}
+
+.CardProduct_imagen{
+    max-width: 120px;
+    height: auto;
+    border-radius: 5px;
+    margin-left: 20px;
+  
+}
+.CardProduct_datos{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+   text-align: start;
+   margin-left: 20px;
+  
+
+}
+.CardProduct_nombre{
+    width: 100%;
+font-size: 20px;
+}
+.CardProduct_marca{
+    width: 100%;
+    font-size: 20px;
+}
+
+.CardProduct_tamaño{
+    width: 100%;
+    font-size: 20px;
+}

@@ -1,0 +1,29 @@
+<script>
+    const input1 = document.querySelector('input[name="image1"]');
+    const miniatura1 = document.querySelector('#miniatura1');
+  
+    input1.addEventListener('change', () => {
+      const file = input1.files[0];
+      const reader = new FileReader();
+  
+      reader.addEventListener('load', () => {
+        miniatura1.src = reader.result;
+      });
+  
+      reader.readAsDataURL(file);
+    });
+  
+    const input2 = document.querySelector('input[name="image2"]');
+    const miniatura2 = document.querySelector('#miniatura2');
+  
+    input2.addEventListener('change', () => {
+      const file = input2.files[0];
+      const reader = new FileReader();
+  
+      reader.addEventListener('load', () => {
+        miniatura2.src = reader.result;
+      });
+  
+      reader.readAsDataURL(file);
+    });
+  </script>

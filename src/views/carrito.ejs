@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <%- include('./partials/head.ejs',{ title : "Carrito" }) %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon-carrito.png">
+    <title>Cancat - Carrito de Compras</title>
+</head>
+
+<body class="cart">
+
+  <%- include('./partials/header', {usuario}) %>
+
+    <main>
+      <div class="cart-main">
+      <div class="cart-main-box">
+        <section class="Productos-en-el-carrito">
+          <div class="Productos-en-el-carrito__seguir-comprando">
+            <i class="fa-solid fa-arrow-left"></i>
+            <a href="/">
+              <h5>Seguir Buscando</h5>
+            </a>
+          </div>
+
+
+          <div id="cart-box" style="width: 98%; margin: 25px 0 0 5px;">
+
+          </div>
+        </section>
+        <!-- Swiper -->
+
+
+
+
+      </div>
+
+      <section class="formas-de-pago">
+        <h4> Formas de Pago </h4>
+        <div>
+          <form class="tipo__de__tarjeta">
+            <div class="tipo__de__tarjeta--empresa">
+              <i class="fa-solid fa-credit-card"></i>
+              <label for="visa">Maestro</label>
+              <input type="radio" id="visa" name="tarjeta" value="visa">
+            </div>
+            <div class="tipo__de__tarjeta--empresa">
+              <i class="fa-solid fa-credit-card"></i>
+              <label for="master">American</label>
+              <input type="radio" id="master" name="tarjeta" value="master">
+            </div>
+            <div class="tipo__de__tarjeta--empresa">
+              <i class="fa-solid fa-credit-card"></i>
+              <label for="american">Visa</label>
+              <input type="radio" id="american" name="tarjeta" value="american">
+            </div>
+
+            <div class="tipo__de__tarjeta--empresa">
+              <i class="fa-solid fa-credit-card"></i>
+              <label for="maestro">Master</label>
+              <input type="radio" id="maestro" name="tarjeta" value="maestro">
+            </div>
+          </form>
+
+
+          <form class="datos__de__tarjeta">
+
+            <div class="datos__de__tarjeta--nombre--numero">
+              <label for="nombre"></label>
+              <input type="text" placeholder="Nombre completo del titular" id="nombre" name="nombre" required>
+
+              <label for="numero"></label>
+              <input type="text" placeholder="Número de la tarjeta" id="numero" name="numero" pattern="[0-9]{16}"
+                required>
+              <div class="datos__de__tarjeta-fecha-cvv">
+                <label for="fecha"></label>
+                <input class="datos__de__tarjeta-fecha" type="text" placeholder="Expiración" id="fecha" name="fecha">
+
+                <label for="cvv"></label>
+                <input class="datos__de__tarjeta-cvv" type="text" placeholder="CVV" id="cvv" name="cvv"
+                  pattern="[0-9]{3}" required>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="subtotal">
+          <p class="subtotal__izquierda">Subtotal</p>
+          <p class="subtotal__derecha" id="cart-subtotal">--</p>
+        </div>
+
+        <div class="formas__de__pago__envio">
+          <p class="formas__de__pago__envio__derecha">Envio</p>
+          <p class="formas__de__pago__envio__izquierza">$ 2.300</p>
+        </div>
+        <div class="formas__de__pago__total--pagar">
+          <p class="formas__de__pago__total">Total</p>
+          <button style="cursor: pointer;" class="formas__de__pago__pagar" id="cart-total">Pagar</button>
+        </div>
+
+      </section>
+
+      </div>
+
+      <div class="swiper mySwiper similares">
+        <div class="swiper_titulo">
+          <h3>Productos similares</h3>
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <article class="productos">
+              <img src="/images/fotosCarrito/nature_adultos (1).png" alt="imagen del producto">
+
+              <div class="productos__marca__descripcion__precio__carrito">
+
+                <div class="productos__marca__descripcion">
+                  <h6>Nature</h6>
+                  <p>Perros pequeños 10kg</p>
+                </div>
+
+                <div class="productos__precio__carrito">
+                  <h5>$12.400</h5>
+                  <i class="fa-solid fa-cart-plus"></i>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="productos">
+              <img src="/images/fotosCarrito/ricocan-perros (1).png" alt="imagen del producto">
+
+              <div class="productos__marca__descripcion__precio__carrito">
+
+                <div class="productos__marca__descripcion">
+                  <h6>Ricocan</h6>
+                  <p>Perros adultos 15kg.</p>
+                </div>
+
+                <div class="productos__precio__carrito">
+                  <h5>$9.900</h5>
+                  <i class="fa-solid fa-cart-plus"></i>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="productos">
+              <img src="/images/fotosCarrito/perrOn-25kg-adultos (1).png" alt="imagen del producto">
+
+              <div class="productos__marca__descripcion__precio__carrito">
+
+                <div class="productos__marca__descripcion">
+                  <h6>PerrOn</h6>
+                  <p>Perros adultos 25kg.</p>
+                </div>
+
+                <div class="productos__precio__carrito">
+                  <h5>$18.900</h5>
+                  <i class="fa-solid fa-cart-plus"></i>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="productos">
+              <img src="/images/fotosCarrito/Balance_perro_adulto_20kg (1).png" alt="imagen del producto">
+
+              <div class="productos__marca__descripcion__precio__carrito">
+
+                <div class="productos__marca__descripcion">
+                  <h6>Balance</h6>
+                  <p>Perros adultos 23kg.</p>
+                </div>
+
+                <div class="productos__precio__carrito">
+                  <h5>$15.200</h5>
+                  <i class="fa-solid fa-cart-plus"></i>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="productos">
+              <img src="/images/fotosCarrito/Balance_perro_adulto_20kg (1).png" alt="imagen del producto">
+
+              <div class="productos__marca__descripcion__precio__carrito">
+
+                <div class="productos__marca__descripcion">
+                  <h6>Balance</h6>
+                  <p>Perros adultos 23kg.</p>
+                </div>
+
+                <div class="productos__precio__carrito">
+                  <h5>$15.200</h5>
+                  <i class="fa-solid fa-cart-plus"></i>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide">
+            <article class="productos">
+              <img src="/images/fotosCarrito/alimento-para-perro-adulto-pedigree-saco-carne-21-kg (1).jpg"
+                alt="imagen del producto">
+
+              <div class="productos__marca__descripcion__precio__carrito">
+
+                <div class="productos__marca__descripcion">
+                  <h6>Pedigree</h6>
+                  <p>Perros adultos 15kg.</p>
+                </div>
+
+                <div class="productos__precio__carrito">
+                  <h5>$11.200</h5>
+                  <i class="fa-solid fa-cart-plus"></i>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </main>
+
+    <%- include('./partials/footer') %>
+
+
+      <!-- Swiper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 2,
+          spaceBetween: 20,
+          freeMode: false,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          breakpoints: {
+            400: {
+              slidesPerView: 2.5,
+            },
+            600: {
+              slidesPerView: 3.1,
+            },
+
+            768: {
+              slidesPerView: 3.6,
+            },
+
+            1024: {
+              slidesPerView: 4.5,
+            },
+          }
+        });
+      </script>
+</body>
+
+</html>

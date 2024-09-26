@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head',{ title : "Cancat" }) %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" type="image/x-icon" href="/images/Favicon-index.png" />
+  <title>CanCat</title>
+
+  <body class="index__body">
+
+    <%- include('./partials/header', {usuario}) %>
+
+      <main class="index__body__main">
+
+        <div class="index__body__main--banner">
+          <!-- Swiper -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div></div>
+                <img src="/images/banner1-home.png" alt="banner">
+                <p class="index__body__main--banner--texto">Porque no solo es una mascota, es parte de tu familia.</p>
+              </div>
+              <div class="swiper-slide">
+                <img src="/images/banner3-home.jpg" alt="banner">
+                <p class="index__body__main--banner--texto index__body__main--banner--texto--festejo">Veni a festejar el
+                  cumple de tu mascota con nosotros</p>
+              </div>
+              <div class="swiper-slide">
+                <img src="/images/banner4-home.jpg" alt="banner">
+                <div class="index__body__main--banner--texto index__body__main--banner--texto--descuentos">
+                  <p>20%, 30%, 40%</p>
+                  <p>Los mejores descuentos en nuestra pagina</p>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <section class="index__body__main__section">
+          <h2 class="index__body__main__section--titulo">Las Mejores Ofertas</h2>
+
+          <% products.filter(product=> product.product_species.name === "perro" ).forEach(product=> { %>
+            <%- include('./partials/productCard.ejs',{ product }) %>
+
+              <% }) %>
+                <h2 class="index__body__main__section--titulo">Los productos mas buscados</h2>
+                <% products.filter(product=> product.product_species.name === "gato" ).forEach(product=> { %>
+                  <%- include('./partials/productCard.ejs',{ product }) %>
+
+                    <% }) %>
+                      <%- include('./partials/banner.ejs') %></a>
+      </main>
+
+      <%- include('./partials/footer') %>
+
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: true,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        </script>
+  </body>
+
+</html>

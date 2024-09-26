@@ -1,0 +1,14 @@
+<article class="producto__agregado">
+    <div class="producto__agregado_img">
+    <img src="/images/<%= productos.Image_products.length ? productos.Image_products[0].file : "new-product.default.png" %>" alt="">
+    </div>
+    <div class="Productos-en-el-carrito__div__titulo__descripcion__precio">
+      <h5 class=".Productos-en-el-carrito__div__titulo"><%= productos.name %></h5>
+      <p class="Productos-en-el-carrito__div__descripcion"><%= productos.description %></p>
+      <h4 class="Productos-en-el-carrito__div__precio"><%= productos.price %></h4>
+    </div>
+    <div class="Productos-en-el-carrito__div__contador__eliminar">
+      <img src="/images/fotosCarrito/contador.png" alt="">
+      <i class="fa-solid fa-trash-can"></i>
+    </div>
+  </article>

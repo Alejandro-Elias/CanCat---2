@@ -1,0 +1,23 @@
+.dashboard{
+    padding: 0%;
+    margin: 0%;
+    height: auto;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-image: url('../../public/img/background-dashboard.jpg');
+    background-repeat: repeat;
+ }
+
+.dashboard-main{
+    width: 90% ;
+    margin-left: 210px;
+ 
+   
+}
+.dashboard-sidebar{
+    width: 10% ;
+    
+    
+}

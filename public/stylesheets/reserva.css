@@ -1,0 +1,38 @@
+.reserva_main {
+    background-color: var(--ColorGris);
+}
+
+.reserva_titulo {
+    background-color: var(--ColorAzul);
+    color: white;
+    width: fit-content;
+    border-radius: 0 20px 20px 0;
+    padding: 0 25px;
+    margin: 10px 0;
+    border-left: none;
+    margin-bottom: 200px;
+}
+
+.reserva_main {
+    background-position: center;
+    background-image: url(/images/imagen-reserva.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+    max-width: 900px;
+    margin: 30px auto;
+    border-radius: 5px;
+    padding-bottom: 100px;
+    padding-top: 30px;
+    height: 450px;
+}
+
+.reserva_date {
+    width: 115px !important; 
+    height: 30px;
+}
+
+.reserva_date_label {
+    width: 50%;
+    height: 26px;
+}

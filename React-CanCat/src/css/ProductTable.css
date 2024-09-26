@@ -1,0 +1,25 @@
+.table_products{
+    border: 5px solid red;
+}
+
+.table_products_header{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+.table_products_header_name{
+    width: auto;
+    color:rgb(6, 30, 12) !important;
+    background-color: rgb(86, 144, 133) !important;
+}
+.table_products_header_description{
+    width: auto ;
+    color:rgb(6, 30, 12) !important;
+    background-color: rgb(86, 144, 133) !important;
+}
+.table_products_header_actions{
+    width: auto ;
+    color:rgb(6, 30, 12) !important;
+    background-color: rgb(86, 144, 133) !important;
+}

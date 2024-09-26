@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head',{ title : "Dashboard" }) %>
+<%- include('./partials/scritps') %>
+<link rel="icon" type="image/x-icon" href="/images/favicon-dashboard.png">
+<title>Cancat - Dashboard</title>
+
+<body class="dashboard-body">
+
+  <%- include('./partials/header-dashboard') %>
+
+  <main class="container mt-3">
+    <section class="row">
+      <div class="col-12 mx-auto">
+        <div class="card shadow rounded">
+          <div class="card-header d-flex justify-content-between">
+            <h4 class="card-title">Productos</h4>
+            <a class="btn btn-outline-primary" href="/productos/agregar-articulos">Nuevo Producto</a>
+          </div>
+          <div class="p-3 pb-0 table-responsive">
+
+            <% if (productos.length) { %>
+            <table class="table table-striped table-hover">
+              <thead class="table-primary">
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% productos.forEach(({id, name, description, Image_products, price})=> { %>
+                <tr>
+                  <th scope="row">
+                    <%= id %>
+                  </th>
+                  <td>
+                    <%= name %>
+                  </td>
+                  <td>
+                    <%= description %>
+                  </td>
+                  <td>
+                    <div class="d-flex gap-2">
+                      <a class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%= id %>">
+                        <i class="fa-solid fa-eye"></i></a>
+
+                      <a class="btn btn-sm btn-outline-warning" href="/productos/editar-articulo/<%= id %>"><i class="fa-solid fa-pencil"></i></a>
+
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#modalDelete<%= id %>" class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+
+                      <%- include('./partials/modal-product-dashboard',{ id, name, description,Image_products, price
+                              }) %>
+
+                      <%- include('./partials/modal-delete-product', { id, name }) %>
+
+                    </div>
+                  </td>
+
+                </tr>
+
+                <% }) %>
+
+                <% } else { %>
+                <div class="col-12">
+                  <h3 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h3>
+                </div>
+                <% } %>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

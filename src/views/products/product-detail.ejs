@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs',{ title : "Detalle" }) %>
+
+<body class="detail_product">
+  <%- include('../partials/scritps') %>
+  <%- include('../partials/header.ejs', {...usuario.dataValues}) %>
+
+  <link rel="icon" type="image/x-icon" href="/images/favicon-detalle.png">
+
+  <div>
+    <title><%= idproducto.name %></title>
+    <!-- ul li de donde te encuentras -->
+    <ul class="ul_li_detailproduct">
+      <li>
+        <a href="/">Home</a>>
+      </li>
+      <li>
+        <a href="/productos/todos"><%= idproducto.categoria %></a>
+      </li>
+      <li>
+        <a href="/productos/detalle/<%= idproducto.id %>">
+          <%= idproducto.name %></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="contenedor_tarjeta_producto">
+
+    <div class="contenedor_div_detail">
+      <div>
+        <h1>
+          <%= idproducto.name %>
+        </h1>
+
+
+      </div>
+
+
+      <!-- Imagenes del producto-->
+      <div class="Imagen_detailproduct">
+
+        <div class="images">
+
+          <div class="thumbnails">
+            <img src="/images/<%= idproducto.Image_products[0] ? idproducto.Image_products[0].file : "new-product.default.png" %>" data-index="0">
+            <img src="/images/<%= idproducto.Image_products[1] ? idproducto.Image_products[1].file : "new-product.default.png" %>" data-index="1">
+          </div>
+          <div class="main-image">
+            <img src="/images/<%= idproducto.Image_products[0] ? idproducto.Image_products[0].file : "new-product.default.png" %>" id="mainImage">
+          </div>
+
+        </div>
+
+        <div class="detail_datalle">
+
+          <div class="detail_product_rigth">
+            <%
+              const precio = typeof idproducto.price === 'number' ? idproducto.price : 0;
+              const descuento = typeof idproducto.discount === 'number' ? idproducto.discount : 0;
+
+              const precioConDescuento = precio - (descuento * precio) / 100;
+              %>
+            <div class="precio_con_descuento">
+
+              <div class="precio__detailproduct">
+                <%= new Intl.NumberFormat('de-DE').format(precioConDescuento) %> $
+              </div>
+              <% if (descuento) { %>
+              <p class="descuento_precio">
+                - <%= descuento %> % Off
+              </p>
+              <% } %>
+            </div>
+
+            <p class="precio__sin_descuento">
+              Precio sin descuento <%= new Intl.NumberFormat('de-DE').format(precio) %> $
+            </p>
+            <div class="promos_bancarias">
+              <img src="/images/promociones bancarias.png" alt="promos bancarias">
+            </div>
+            <div class="buttons">
+
+              <button class="button_comprar__detailproduct" onclick="addToCart('<%=idproducto.id%>', '<%=idproducto.name%>','<%=idproducto.description%>', '<%=idproducto.price%>', '<%=idproducto.Image_products[0].file%>')">Agregar al carrito</button>
+              
+              <% if (locals.userLogin) { %>
+              <button class="button_comprar__detailproduct" onclick="buyNow('<%=idproducto.id%>', '<%=idproducto.name%>', '<%=idproducto.description%>', '<%=idproducto.price%>', '<%=idproducto.Image_products[0].file%>')">Comprar ahora</button>
+              <% } else {  %>
+                <button class="button_comprar__detailproduct" onclick="noUser()">Comprar ahora</button>
+              <% } %>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="descripcion__detailproduct">
+
+        <%= idproducto.description %>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Productos seccion dde destacados -->
+  <h2 class="productos__destacados__h2">PRODUCTOS DESTACADOS </h2>
+
+  <section class="productos__destacados">
+
+    <% productos.forEach(product => { %>
+    <%- include('../partials/productCard.ejs',{ product }) %>
+    <% }) %>
+  </section>
+
+  <script>
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+    const mainImage = document.getElementById('mainImage');
+
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', () => {
+        mainImage.src = thumbnail.src;
+      });
+    });
+  </script>
+
+  <%- include('../partials/footer') %>
+
+</body>
+
+</html>

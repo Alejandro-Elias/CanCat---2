@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <footer class="footer">
+        <div id="confirmacion" style="display: none;background-color: rgb(197, 37, 26);color: rgb(255, 255, 255);text-align: center; height: 20px; ">¡Gracias por suscribirte!</div>
+
+        <div class="footer--content--logo-y-texto">
+            <div class="footer--content--logo">
+                <img src="/images/logo-blanco.png" alt="logo">
+            </div>
+            <div class="footer--content--registrate--texto">
+                <p>Suscribite para recibir ofertas, nuevo contenido y mucho mas </p>
+            </div>
+        </div>
+        <div class="opcion">
+            <div class="footer--content--registrate">
+
+                <div class="footer--content--nosotros">
+                    <p>Nos enfocamos en ofrecer productos y servicios de alta calidad para mascotas.Ofrecemos alimentos,
+                        juguetes, accesorios, productos de higiene y cuidado, ademas de otros artículos.también
+                        brindamos
+                        servicios de peluquería y baño.Nuestro objetivo es brindar a nuestros clientes una experiencia
+                        de
+                        compra satisfactoria y asegurarnos de que sus mascotas reciban los mejores productos y
+                        servicios.
+                    </p>
+                </div>
+                <div class="footer--content--form">
+                    <form action="/" method="post" class="footer--content--input" id="subscribe-form">
+                        <input class="footer--content--registrate--input--texto" type="email" name="email"
+                            placeholder="Ingresa tu email">
+                        <input class="footer--content--registrate--input--submit" type="submit" value="Suscribite">
+                        
+                    </form>
+
+                    <ul class="footer--content--ul">
+                        <p>No te lo píerdas</p>
+                        <li><a href="">Nuestras mejores ofertas</a></li>
+                        <li><a href="">Promociones</a></li>
+                        <li><a href="">Los mas lindos juquetes para tus mascotass</a></li>
+                        <li><a href="">Los + Vendidos</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer--nav">
+                <a class="footer--nav--a" onclick="divNosotros()">
+                    <p>Sobre Nosotros <i class="fa-solid fa-chevron-down"></i></p>
+                </a>
+                <div class="footer-desplegable" id="footer-div-nosotros">
+                    <p>Nos enfocamos en ofrecer productos y servicios de alta calidad para mascotas.Ofrecemos alimentos,
+                        juguetes, accesorios, productos de higiene y cuidado, ademas de otros artículos.también
+                        brindamos
+                        servicios de peluquería y baño.Nuestro objetivo es brindar a nuestros clientes una experiencia
+                        de
+                        compra satisfactoria y asegurarnos de que sus mascotas reciban los mejores productos y
+                        servicios.
+                    </p>
+                </div>
+                <a class="footer--nav--a" onclick="divNoTePierdas()">
+                    <p>No te lo pierdas <i class="fa-solid fa-chevron-down"></i></p>
+                    <div class="footer-desplegable" id="footer-div-NoTePierdas">
+
+                        <a class="desplegable--a" href="#">Nuestras mejores ofertas</a>
+                        <a class="desplegable--a" href="#">Promociones</a>
+                        <a class="desplegable--a" href="#">Los mas lindos juquetes para tus mascotass</a>
+                        <a class="desplegable--a" href="#">Los + Vendidos</a>
+                    </div>
+                </a>
+                <a class="footer--nav--a" onclick="divServicios()">
+                    <p>Servicios <i class="fa-solid fa-chevron-down"></i></p>
+                    <div class="footer-desplegable" id="footer-div-Servicios">
+                        <a class="desplegable--a" href="#">Pedí tu turno para baño y corte de pelo</a>
+                        <a class="desplegable--a" href="#">Sobre las vacunas de tus mascotas</a>
+                        <a class="desplegable--a" href="#">Lo que necesitas saber sobre tus mascotas</a>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="footer--servicios">
+
+                <ul class="footer--content--ul footer--content--ul-servicios">
+                    <p>Servicios</p>
+                    <% if (locals.userLogin) { %>
+                        <li><!-- Calendly link widget begin -->
+                            <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                            <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"
+                                async></script>
+                            <a href=""
+                                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/alejandroelias25/reserva'});return false;">Pedí tu turno para baño y corte de pelo</a>
+                            <!-- Calendly link widget end -->
+                        </li>
+                        
+                        <% } else { %>
+                            <li><a href="/usuarios/ingreso">Pedí tu turno para baño y corte de pelo</a></li>
+                            <% } %>
+                                <li><a href="">Sobre las vacunas de tus mascotas</a></li>
+                                <li><a href="">Lo que necesitas saber sobre tus mascotas</a></li>
+                </ul>
+
+                <div class="footer--redes-y-medios">
+                    <div class="footer--seguinos">
+                        <p>Seguinos</p>
+                        <div class="footer--iconos--redes">
+                            <a href="https:/www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https:/www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https:/www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+
+                    <div class="footer--medios-de-pago">
+                        <p>Medios de Pago</p>
+                        <div class="footer--iconos--pagos">
+                            <i class="fa-brands fa-cc-diners-club"></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <img src="/images/mercado-libre-svgrepo-com.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer--copy">
+            <p><i class="fa-regular fa-copyright"></i> 2023 - Diseño Animal - Digital House - Argentina </p>
+
+        </div>
+
+        <script>
+            document.getElementById('subscribe-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Evitar que se envíe el formulario
+                document.getElementById('confirmacion').style.display = 'block'; // Mostrar el mensaje de confirmación
+            });
+
+            var clic = 1;
+
+            function divNosotros() {
+
+                if (clic == 1) {
+
+                    document.getElementById("footer-div-nosotros").style.display = "block";
+
+                    clic = clic + 1;
+
+                } else {
+
+                    document.getElementById("footer-div-nosotros").style.display = "none";
+
+                    clic = 1;
+
+                }
+
+            }
+
+            function divNoTePierdas() {
+
+                if (clic == 1) {
+
+                    document.getElementById("footer-div-NoTePierdas").style.display = "block";
+
+                    clic = clic + 1;
+
+                } else {
+
+                    document.getElementById("footer-div-NoTePierdas").style.display = "none";
+
+                    clic = 1;
+
+                }
+
+            }
+
+            function divServicios() {
+
+                if (clic == 1) {
+
+                    document.getElementById("footer-div-Servicios").style.display = "block";
+
+                    clic = clic + 1;
+
+                } else {
+
+                    document.getElementById("footer-div-Servicios").style.display = "none";
+
+                    clic = 1;
+
+                }
+
+            }
+
+        </script>
+
+    </footer>
+
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script src="/js/calendly.js"></script>
+</body>
+
+</html>

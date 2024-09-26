@@ -1,0 +1,22 @@
+.create-form input{
+    display: flex;
+    justify-content: space-between
+};
+
+.validacion-formulario {
+
+  .validacion-formulario.valid {
+    border-color: green;
+  }
+  
+  .validacion-formulario.invalid {
+    border-color: red;
+  }
+  
+  .error {
+    color: red;
+    display: none;
+    font-weight: bold;
+  }
+
+}

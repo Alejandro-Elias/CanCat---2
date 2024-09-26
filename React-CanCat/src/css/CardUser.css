@@ -1,0 +1,19 @@
+.CardUser{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(86, 144, 133);
+    padding-top: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    color: #ffff;
+    text-shadow: #0000;
+    
+}
+
+.CardUser h3{
+    width: 100%;
+    font-size: 1.2rem;
+    
+}

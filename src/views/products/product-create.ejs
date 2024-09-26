@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <%- include('../partials/scritps') %>
+    <%- include('../partials/head',{ title : "agregar-articulos" }) %>
+      <link rel="icon" type="image/x-icon" href="/images/favicon-agregar.png" />
+      <title>CanCat - Agregar Productos</title>
+</head>
+
+<body class="dashboard-body">
+
+  <!-- efecto del boton -->
+  <style>
+    .btn:hover {
+      transform: scale(1.01);
+    }
+  </style>
+
+  <header>
+    <%- include('../partials/header-dashboard') %>
+  </header>
+  <main class="create-form">
+    <section class="row my-2">
+      <div class="col-10 col-md-9 mx-auto">
+        <div class="card">
+
+          <div class="card-header d-flex justify-content-between">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/admin/dashboard" class="text-primary">Home Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Agregar Productos</li>
+              </ol>
+            </nav>
+          </div>
+
+          <div class="card-body">
+            <form action="/productos/store" method="post" style="background-color: rgb(245, 245, 245);"
+              class="row d-flex justify-content-center align-items-center py-2 px-5" enctype="multipart/form-data">
+
+              <h3>Agregar Articulos</h3>
+
+              <div class="row d-flex align-item-center mt-2">
+
+                <div class="col-12 col-md-6 mb-3">
+                  <div class="form-floating">
+                    <input name="nombre" type="text"
+                      class="form-control <%= (locals.errors && errors.nombre) ? 'is-invalid' : '' %>" id="nombre"
+                      style="padding-bottom: 0px;" value="<%= locals.old && old.nombre%>">
+                    <label for="nombre">Nombre del articulo</label>
+                    <div class="invalid-feedback">
+                      <%= (locals.errors && errors.nombre) ? errors.nombre.msg : '' %>
+                    </div>
+                    <span id="error-nombre" class="error"></span>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 mb-3">
+                  <div class="form-floating">
+                    <select name="categoria"
+                      class="form-select <%= (locals.errors && errors.categoria) ? 'is-invalid' : '' %>" id="categoria"
+                      aria-label="Floating label select example" style="width:100%; padding-bottom: 0px;">
+                      <option value="" selected hidden>Elija la especie</option>
+                      <% especies.forEach(item=> { %>
+                        <option value="<%= item.id %>">
+                          <%= item.name %>
+                        </option>
+                        <% }); %>
+                    </select>
+
+                    <label for="categoria">Especie</label>
+                    <div class="invalid-feedback">
+                      <%= (locals.errors && errors.categoria) ? errors.categoria.msg : '' %>
+                    </div>
+                    <span id="error-categoria" class="error"></span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row d-flex align-item-center mt-2">
+
+                <div class="col-12 col-md-6 pb-3">
+                  <div class="form-floating">
+                    <input name="precio" type="number"
+                      class="form-control <%= (locals.errors && errors.precio) ? 'is-invalid' : '' %>" id="precio"
+                      style="padding-bottom: 0px;" value="<%= locals.old && old.precio %>">
+                    <label for="precio">Precio del producto</label>
+                    <div class="invalid-feedback">
+                      <%= (locals.errors && errors.precio) ? errors.precio.msg : '' %>
+                    </div>
+                    <span id="error-precio" class="error"></span>
+                  </div>
+
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                  <div class="form-floating">
+                    <input name="stock" type="number"
+                      class="form-control <%= (locals.errors && errors.stock) ? 'is-invalid' : '' %>" id="stock"
+                      style="padding-bottom: 0px;" value="<%= locals.old && old.stock %>">
+                    <label for="stock">Cantidad en stock</label>
+                    <div class="invalid-feedback">
+                      <%= (locals.errors && errors.stock) ? errors.stock.msg : '' %>
+                    </div>
+                    <span id="error-stock" class="error"></span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row d-flex align-item-center mt-2">
+
+                <div class="col-12 col-md-6 mb-3">
+                  <div class="form-floating">
+                    <select name="sabores"
+                      class="form-select <%= (locals.errors && errors.sabores) ? 'is-invalid' : '' %>" id="sabores"
+                      aria-label="Floating label select example" style="width:100%; padding-bottom: 0px;"
+                      value="<%= locals.old && old.sabores %>">
+                      <option value="" selected hidden>Elija el sabor</option>
+
+                      <% sabores.forEach(item=> { %>
+
+                        <option value="<%= item.id %>">
+                          <%= item.name %>
+                        </option>
+
+                        <% }) %>
+                          <!-- Agrega más opciones si es necesario -->
+                    </select>
+                    <label for="sabores">Sabores</label>
+                    <div class="invalid-feedback">
+                      <%= (locals.errors && errors.sabores) ? errors.sabores.msg : '' %>
+                    </div>
+                    <span id="error-sabores" class="error"></span>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 mb-2">
+                  <div class="form-floating">
+                    <input name="descuento" type="number"
+                      class="form-control <%= (locals.errors && errors.descuento) ? 'is-invalid' : '' %>" id="descuento"
+                      style="padding-bottom: 0px;" value="<%= locals.old && old.descuento %> ">
+                    <label for="descuento">Descuento -%</label>
+                    <div class="invalid-feedback">
+                      <%= (locals.errors && errors.descuento) ? errors.descuento.msg : '' %>
+                    </div>
+                    <span id="error-descuento" class="error"></span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row d-flex align-item-center mt-2">
+
+                <div class="col-6 d-flex justify-content-between">
+
+                  <div class="col-6">
+
+                    <div class="col-12 form-floating">
+                      <select name="measure"
+                        class="form-control <%= (locals.errors && errors.measure) ? 'is-invalid' : '' %>" id="measure"
+                        aria-label="Floating label select example" style="padding-bottom: 0px;" >
+                        <option  hidden>Elija Medida</option>
+                        <% filing.forEach(fili=> { %>
+                          <option value="<%= fili.id %>">
+                            <%= fili.measure %>
+                          </option>
+                          <% }) %>
+                      </select>
+                      <label for="measure">Medida</label>
+                      <div class="invalid-feedback">
+                        <%= (locals.errors && errors.measure) ? errors.measure.msg : '' %>
+                      </div>
+                      <span id="error-measure" class="error"></span>
+                    </div>
+
+                  </div>
+
+                  <div class="col-5">
+                    <div class="col-12 form-floating">
+                      <input name="value" type="number"
+                        class="form-control <%= (locals.errors && errors.value) ? 'is-invalid' : '' %>" id="value"
+                        value="<%= locals.old && old.value %>" style="padding-bottom: 0px;">
+                      <label for="value">Valor</label>
+                      <div class="invalid-feedback">
+                        <%= (locals.errors && errors.value) ? errors.value.msg : '' %>
+                      </div>
+                      <span id="error-value" class="error"></span>
+
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <div class="col-6">
+
+                  <div class="form-floating">
+                    <input name="brand" type="text"
+                      class="form-control <%= (locals.errors && errors.brand) ? 'is-invalid' : '' %>" id="brand"
+                      value="<%= locals.old && old.brand %>" style="padding-bottom: 0px;">
+                    <label for="brand">Marca</label>
+                    <div class="invalid-feedback">
+                      <%= (locals.errors && errors.brand) ? errors.brand.msg : '' %>
+                    </div>
+                    <span id="error-brand" class="error"></span>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="row d-flex align-item-center mt-4">
+
+                <div class="row d-flex justify-content-center align-items-center gap-4 w-50">
+                  <input name="image1" type="file"
+                    class="form-control <%= (locals.errors && errors.image1) ? 'is-invalid' : '' %> " id="image1"
+                    hidden>
+                  <img src="/images/new-product.default.png" alt="Primera imagen de la lista" class="img-thumbnail"
+                    id="miniatura1" style="max-width: 100px; max-height: 120px; ">
+                  <label class="btn btn-lg btn-outline-dark w-80" for="image1"
+                    style="width:auto; height: auto; ">Agregar imagen</label>
+                  <span id="error-image1" class="error text-center"></span>
+                  <div class="invalid-feedback align-items-center text-center">
+                    <%= (locals.errors && errors.image1) ? errors.image1.msg : '' %>
+                  </div>
+                </div>
+
+                <div class="row d-flex justify-content-center align-items-center gap-4 w-50">
+                  <input name="image2" type="file"
+                    class="form-control <%= (locals.errors && errors.image2) ? 'is-invalid' : '' %> " id="image2"
+                    id="image2" hidden>
+                  <img src="/images/new-product.default.png" alt="Segunda imagen de la lista" class="img-thumbnail"
+                    id="miniatura2" style="max-width: 100px; max-height: 120px;">
+                  <label class="btn btn-lg btn-outline-dark w-80" for="image2"
+                    style="width:auto; height: auto; ">Agregar imagen</label>
+                  <span id="error-image2" class="error text-center"></span>
+                  <div class="invalid-feedback align-items-center text-center">
+                    <%= (locals.errors && errors.image2) ? errors.image2.msg : '' %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row d-flex align-item-center mt-4">
+
+                <div class="d-flex justify-content-center form-floating mb-3">
+                  <div class="col-12 ">
+                    <textarea placeholder="Descripción" name="descripcion"
+                      class="form-control <%= (locals.errors && errors.descripcion) ? 'is-invalid' : '' %>"
+                      id="descripcion" style="height: 100px; " value="<%= locals.old && old.descripcion %>"></textarea>
+                    <div class="invalid-feedback">
+                      <%= (locals.errors && errors.descripcion) ? errors.descripcion.msg : '' %>
+                    </div>
+                    <span id="error-descripcion" class="error"></span>
+                  </div>
+                </div>
+
+                <div class="col-12 d-flex justify-content-center mp-3" style=" transition: all 0.01s;">
+                  <button class="btn btn-lg btn-dark">Agregar Producto</button>
+                </div>
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+  <script src="/js/products/create.js"></script>
+  <%- include('../partials/script-create-product') %>
+</body>
+
+</html>

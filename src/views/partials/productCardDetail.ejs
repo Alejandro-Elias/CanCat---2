@@ -1,0 +1,11 @@
+<a  href="/productos/detalle/<%= product.id %>">
+<div class="item ">
+    <img class="imagen-destacados" src="/images/<%= product.Image_products ? product.Image_products[0].file : "new-product.default.png" %>" alt="<%= idproducto.nombre %>">
+    <h3> <%= product.name %></h3>
+    <p class="p_descripcion"> 
+        <%= product.description %></p>
+    <p class = Precio_container> $ <%= Intl.NumberFormat('de-DE').format(product.price)%> </p>
+     %> </p>
+    <a class="Carrito_detailproduct" href="/Carrito">Agregar al carrito <i class="fa-solid fa-cart-shopping"></i></a>
+</div>
+</a>

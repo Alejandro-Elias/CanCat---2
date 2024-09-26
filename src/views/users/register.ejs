@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs' ,{ title : "Register" }) %>
+  <link rel="icon" type="image/x-icon" href="/images/favicon-register.png">
+  <title>Cancat - Registro</title>
+
+  <body>
+
+    <%- include('../partials/header.ejs') %>
+
+      <main class="register_main">
+        <nav>
+          <h1>Registrarse</h1>
+          <form id="form-register" action="" method="POST">
+            <div class="register_form">
+              <div class="register_imput">
+
+                <div class="register-linea">
+
+                  <div>
+                    <label for="name"></label>
+                    <input type="text" id="name" name="name" placeholder="Nombre y Apellido"
+                        class="<%= locals.errors && errors.name ? 'is-invalid' : '' %>"  
+                        value="<%= locals.old && old.name ? old.name : null %>">
+                    <div class="box-alert">
+                        <small id="alert0" class="alert">
+                            <%= locals.errors && errors.name ? errors.name.msg : '' %>
+                        </small>
+                    </div>
+                </div>
+                
+
+                <div>
+                  <label for="email"></label>
+                  <input type="text" id="email" name="email" placeholder="Correo electrónico" minlength="5" maxlength="50"
+                      class="<%= locals.errors && errors.email ? 'is-invalid' : '' %>"
+                      value="<%= locals.old && old.email ? old.email : null %>">
+                  <div class="box-alert">
+                      <small id="alert3" class="alert">
+                          <%= locals.errors && errors.email ? errors.email.msg : '' %>
+                      </small>
+                  </div>
+              </div>
+              
+                </div>
+
+                <div class="register-linea">
+
+                  <div>
+                    <label for="password"></label>
+                    <div class="register-pass">
+                        <input type="password" id="password" name="password"
+                        value="<%= locals.errors && errors.password ? 'is-invalid' : null %>" placeholder="Contraseña"
+                        maxlength="30">
+                        <span id="togglePassword" class="password-toggle password-toggle-register">&#128065;</span>
+                    </div>
+                    
+                    <div class="box-alert">
+                      <small id="alert2" class="alert">
+                        <%= locals.errors && errors.password ? errors.password.msg : '' %>
+                      </small>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="password2"></label>
+                    <input type="password" id="password2" name="password2" placeholder="Confirmar contraseña" maxlength="30"
+                    class="<%= locals.errors && errors.password2 ? 'is-invalid' : '' %>"
+                      value="<%= locals.old && old.password2 ? old.password2 : null %>">
+                    <div class="box-alert">
+                      <small id="alert5" class="alert">
+                        <%= locals.errors && errors.password2 ? errors.password2.msg : '' %>
+                      </small>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="register-linea">
+                  <div>
+                    <label for="mascota"></label>
+                    <input type="text" id="mascota" name="mascota" placeholder="Nombre de su mascota (opcional)"
+                      value="<%= locals.old && old.mascota ? old.mascota : null %>">
+                   </div>
+                
+                  <div>
+                    <label for="especie"></label>
+                    <select name="especie" id="especie" class="register_select">
+                      <option value="" selected hidden>Tipo de mascota (opcional)</option>
+                      <% especies.forEach(item=> { %>
+                        <option value="<%= item.id %>">
+                          <%= item.name %>
+                        </option>
+                      <% }) %>
+                    </select>
+                   </div>
+                </div>
+                
+                  <div class="remember">
+                    <div class="remember-input">
+                      <input type="checkbox" id="remember" value="1" name="remember">
+                    </div>
+                    <div class="remember-label">
+                      <label for="remember">Acepto los términos y condiciones</label>
+                    </div>
+                    <small id="error-remember" class="alert-condiciones-small">
+                      <%= locals.errors && errors.remember ? errors.remember.msg : null %>
+                    </small>
+                  </div>
+
+                  <button class="register_button" type="submit">Crear cuenta</button>
+
+                </div>
+            </div>
+          </form>
+        </nav>
+      </main>
+
+      <%- include('../partials/footer.ejs') %>
+
+        <script src="/js/Users/validacion-register.js"></script>
+
+        <script>
+          const passwordInput = document.getElementById('password');
+          const togglePasswordButton = document.getElementById('togglePassword');
+  
+          togglePasswordButton.addEventListener('click', function () {
+              if (passwordInput.type === 'password') {
+                  passwordInput.type = 'text';
+              } else {
+                  passwordInput.type = 'password';
+              }
+          });
+      </script>
+
+  </body>
+
+</html>

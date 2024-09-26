@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head',{ title : "Dashboard" }) %>
+<%- include('./partials/scritps') %>
+<link rel="icon" type="image/x-icon" href="/images/favicon-dashboard.png">
+<title>Cancat - Dashboard</title>
+
+<body class="dashboard-body">
+
+  <%- include('./partials/header-dashboard') %>
+
+  <main class="container mt-3">
+    <section class="row">
+      <div class="col-12 col-md-10 mx-auto">
+        <div class="card shadow rounded">
+          <div class="card-header d-flex justify-content-between">
+            <h4 class="card-title">Usuarios</h4>
+          </div>
+          <div class="p-3 pb-0 table-responsive">
+            <table class="table table-striped">
+              <thead class="table-success">
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Role</th>
+                  <th scope="col" class="text-center">Gerarquia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% users.forEach(({id, name, email, roleId})=> { %>
+                <tr>
+                  <th scope="row">
+                    <%= name %>
+                  </th>
+                  <td>
+                    <%= email %>
+                  </td>
+                  <td>
+                    <%= roleId == 1 ? "Admin" : "User" %>
+                  </td>
+                  <td>
+                    <div class="d-flex gap-2 justify-content-center p-1">
+                      <form action="/usuarios/dashboardUsuarios/<%= id %>?_method=PUT" method="POST">
+
+                        <button class="btn btn-primary " type="submit" name="admin" value="1">Admin</button>
+                        <button class="btn btn-info" type="submit" name="usuario" value="1">Usuario</button>
+
+                      </form>
+
+                    </div>
+                  </td>
+
+                </tr>
+
+                <% }) %>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

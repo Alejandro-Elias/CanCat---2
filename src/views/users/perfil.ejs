@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs' ,{ title : "Register" }) %>
+    <link rel="icon" type="image/x-icon" href="/images/favicon-register.png">
+    <title>Cancat - Registro</title>
+
+    <body class="perfil_body">
+
+        <%- include('../partials/header.ejs', {usuario}) %>
+
+            <main class="perfil_main">
+                <section class="perfil_section">
+                    <div class="Perfil_imagen_y_titulo">
+                        <div>
+                            <div class="perfil_titulo">
+                                <h2>Perfil</h2>
+                            </div>
+                            <div class="perfil_titulo">
+                                <h2>
+                                    <%= locals.old && old.name ? old.name : usuario.name %>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="perfil_imagen_content">
+                            <img class="perfil_imagen" src="/images/<%=  usuario.image != "defalut.jpeg" ? usuario.image : "user_default.jpeg" %>" alt="">
+                        </div>
+                    </div>
+                    <form id="perfil_form" class="perfil_form" action="/usuarios/update/<%= usuario.id %>?_method=PUT" method="POST"
+                        enctype="multipart/form-data">
+                        <div>
+                            <div class="perfil__form__div">
+                                <div>
+                                    <label class="perfil_form_div_label" for="name">Nombre y Apellido</label>
+                                    <input class="perfil_form_input_select " type="text" name="name" id="name" placeholder="Nombre y Apellido" minlength="8"
+                                        maxlength="30" value="<%= locals.old && old.name ? old.name : usuario.name %>">
+
+                                    <small id="alert0" class="perfil_alert" class="perfil_alert">
+                                        <%= locals.errors && errors.name ? errors.name.msg : null %>
+                                    </small>
+
+                                </div>
+                                <div class="perfil___form__div">
+                                  <label class="perfil_form_div_label" for="email">Correo electronico</label>
+                                    <input  class="perfil_form_input_select " type="email" name="email" id="email" placeholder="Correo electronico" minlength="5"
+                                        maxlength="40"  value="<%= locals.old && old.email ? old.email : usuario.email %>" readonly>
+
+                                    <small  id="alert1" class="perfil_alert" class="perfil_alert">
+                                        <%= locals.errors && errors.email ? errors.email.msg : null %>
+                                    </small>
+
+                                </div>
+
+                            </div>
+                            <div class="perfil__form__div">
+                                <div>
+                                  <label class="perfil_form_div_label" for="mascota">Nombre de Mascota</label>
+                                    <input  class="perfil_form_input_select " type="text" name="mascota" id="mascota" placeholder="Nombre Mascota"
+                                        value="<%= mascotas && mascotas.name ? mascotas.name : "" %>">
+
+                                    <small  id="alert2" class="perfil_alert" class="perfil_alert">
+                                        <%= locals.errors && errors.mascota ? errors.mascota.msg : null %>
+                                    </small>
+
+                                </div>
+
+                                <div>
+                                  <label class="perfil_form_div_label" for="especie">Tipo de Mascota</label>
+                                  <select  class="perfil_form_input_select " name="especie" class="form-select" id="especie">
+                                    <option value="" selected hidden>Elija el tipo de mascota</option>
+
+                                    <% especies.forEach(item => { %>
+
+                                     <option value="<%= item.id %>" <%= (item.id && mascotas && mascotas.specieId == item.id) && "selected" %> ><%= item.name %></option>
+                                     
+                                    <% }) %>
+                                  </select>
+
+                                    <small  id="alert3" class="perfil_alert">
+                                        <%= locals.errors && errors.especies ? errors.especies.msg : null %>
+                                    </small>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="perfil_form_button">
+                            <input name="imagen" type="file" class="form-control" id="imagen" hidden>
+                            <label class="perfil__form__button" for="imagen">Cambiar Imagen</label>
+                            <button type="submit">Actualizar datos</button>
+                        </div>
+
+                    </form>
+                </section>
+            </main>
+
+            <%- include('../partials/footer.ejs') %>
+
+            <script src="/js/Users/validacion-perfil.js"></script>
+
+    </body>
+
+</html>
